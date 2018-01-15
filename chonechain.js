@@ -32,7 +32,7 @@ class Block {
 class Blockchain{
     constructor() {
         this.chain = [this.createGenesisBlock()];
-        this.difficulty = 3;
+        this.difficulty = 4;
     }
     createGenesisBlock() {
         return new Block(0, Date.now(), "Genesis block by Chone himself!!", "0");
@@ -71,7 +71,7 @@ class Blockchain{
 
 let cchain = new Blockchain();
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 100; i++) {
   cchain.addBlock(new Block(i, Date.now(), { sender: 'chace', receiver: 'jerry rice', amount: 0.002 }));
 }
 
