@@ -32,7 +32,7 @@ class Block {
 class Blockchain{
     constructor() {
         this.chain = [this.createGenesisBlock()];
-        this.difficulty = 4;
+        this.difficulty = 6;
     }
     createGenesisBlock() {
         return new Block(0, Date.now(), "Genesis block by Chone himself!!", "0");
@@ -63,6 +63,13 @@ class Blockchain{
         }
         return true;
     }
+    isValidBlockStructure(block) {
+      return typeof block.index === 'number'
+        && typeof block.hash === 'string'
+        && typeof block.previousHash === 'string'
+        && typeof block.timestamp === 'number'
+        && typeof block.data === 'string';
+    }
 }
 
 //############################################################################
@@ -71,7 +78,7 @@ class Blockchain{
 
 let cchain = new Blockchain();
 
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 5; i++) {
   cchain.addBlock(new Block(i, Date.now(), { sender: 'chace', receiver: 'jerry rice', amount: 0.002 }));
 }
 
