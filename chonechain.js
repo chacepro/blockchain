@@ -82,7 +82,7 @@ class Blockchain{
 let cchain = new Blockchain();
 
 for (let i = 1; i <= 5; i++) {
-  cchain.addBlock(new Block(i, Date.now(), { sender: 'chace', receiver: 'jerry rice', amount: 0.002 }));
+  cchain.addBlock(new Block(i, Date.now(), { sender: 'cp', receiver: 'jp', amount: 1.5 }));
 }
 
 var output = cchain.listblockchain();
