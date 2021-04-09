@@ -38,7 +38,7 @@ class Blockchain{
         this.difficulty = 4;
     }
     createGenesisBlock() {
-        return new Block(0, Date.now(), "Genesis block by Chone himself!!", "0");
+        return new Block(0, Date.now(), "Genesis block by Chone himself!!!", "0");
     }
     addBlock(newBlock) {
         newBlock.previousHash = this.getLatestBlock().hash;
